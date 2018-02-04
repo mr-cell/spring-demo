@@ -1,5 +1,16 @@
 language: java
-jdf: oraclejdk8
+jdk: oraclejdk8
 
 script:
 - ./mvnw clean install -B
+- ./mvnw clean package sonar:sonar
+
+env:
+  global:
+    secure: M3zN4Znn55nxs6aFhTfliFZLAVO7YolqUCCYM4fcvZLmzVfsisy4kWDXp6KwcW1e8ZDRtw0Mqy918GGkRzG5I/U523byXRhMxO7XyXq13+II4HsFfvOHXQ+uC2miVMZCMuwskrTCnHlHrbUpi8Vz1kPE9WiS7672i9GRtZqqRwcqY3Z2YCewZsQqX+zmzlgByLNdw5hqtXwfmZMXQnULLHkmxlwE9vV5hm8C3NP/FhgJvIZjN5H2uhTYteZTuSFdpBge2tSUO6Zw5zkHxXZfRURNj0TGItcPE+dd3pvFuNaaIjRpCns4PuSMTxmgAP4/COAnuZYuYWBcmdoDMCOrHdbxVzGxEH+4ZPCYLUTngTyjkxYgih8FJ+VbGl1cI13MfVYlkXcTQw2yuEpdEiReMS+TM1s/0YeN3Q9TsqI/dWY+nCN383cIKnSe4agjw9ZCODS70AN2asoTOfKEDvyT1t4suLocmpNsx0HTzLJsyEGcduYinxSpzm2+2mBzHxzrW+ETjoYVR/jh+Qsqy4xupFPXqnE6qpUm61NWTSVkct0GEvAFpRcZy23r6mKIv56KnmHOln3Fz6t2T0m+24XCfR39X1O7VCfZ/wdTFI2fNzhK5W0No2IYy9hWhpvdT+dxoiDvhcFBW/uYUVpP0JeTddLhdSqRkXnlp5BUUBfJbGI=
+
+addons:
+  sonarcloud:
+    organization: mr-cell-github
+    token:
+      secure: $SONAR_TOKEN
