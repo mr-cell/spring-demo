@@ -14,9 +14,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@SpringBootTest
 @AutoConfigureMockMvc
-public class TestRestContollerTests {
+public class TestRestContollerIT {
 
     @Autowired
     private MockMvc mockMvc;
