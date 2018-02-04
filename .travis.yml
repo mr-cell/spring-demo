@@ -1,16 +1,27 @@
 language: java
 jdk: oraclejdk8
-
+sudo: required
 script:
-- ./mvnw clean install -B
-- ./mvnw clean package sonar:sonar
-
+- "./mvnw clean install -B"
+- "./mvnw clean package sonar:sonar"
+services:
+- docker
 env:
   global:
-    secure: M3zN4Znn55nxs6aFhTfliFZLAVO7YolqUCCYM4fcvZLmzVfsisy4kWDXp6KwcW1e8ZDRtw0Mqy918GGkRzG5I/U523byXRhMxO7XyXq13+II4HsFfvOHXQ+uC2miVMZCMuwskrTCnHlHrbUpi8Vz1kPE9WiS7672i9GRtZqqRwcqY3Z2YCewZsQqX+zmzlgByLNdw5hqtXwfmZMXQnULLHkmxlwE9vV5hm8C3NP/FhgJvIZjN5H2uhTYteZTuSFdpBge2tSUO6Zw5zkHxXZfRURNj0TGItcPE+dd3pvFuNaaIjRpCns4PuSMTxmgAP4/COAnuZYuYWBcmdoDMCOrHdbxVzGxEH+4ZPCYLUTngTyjkxYgih8FJ+VbGl1cI13MfVYlkXcTQw2yuEpdEiReMS+TM1s/0YeN3Q9TsqI/dWY+nCN383cIKnSe4agjw9ZCODS70AN2asoTOfKEDvyT1t4suLocmpNsx0HTzLJsyEGcduYinxSpzm2+2mBzHxzrW+ETjoYVR/jh+Qsqy4xupFPXqnE6qpUm61NWTSVkct0GEvAFpRcZy23r6mKIv56KnmHOln3Fz6t2T0m+24XCfR39X1O7VCfZ/wdTFI2fNzhK5W0No2IYy9hWhpvdT+dxoiDvhcFBW/uYUVpP0JeTddLhdSqRkXnlp5BUUBfJbGI=
-
+  - secure: M3zN4Znn55nxs6aFhTfliFZLAVO7YolqUCCYM4fcvZLmzVfsisy4kWDXp6KwcW1e8ZDRtw0Mqy918GGkRzG5I/U523byXRhMxO7XyXq13+II4HsFfvOHXQ+uC2miVMZCMuwskrTCnHlHrbUpi8Vz1kPE9WiS7672i9GRtZqqRwcqY3Z2YCewZsQqX+zmzlgByLNdw5hqtXwfmZMXQnULLHkmxlwE9vV5hm8C3NP/FhgJvIZjN5H2uhTYteZTuSFdpBge2tSUO6Zw5zkHxXZfRURNj0TGItcPE+dd3pvFuNaaIjRpCns4PuSMTxmgAP4/COAnuZYuYWBcmdoDMCOrHdbxVzGxEH+4ZPCYLUTngTyjkxYgih8FJ+VbGl1cI13MfVYlkXcTQw2yuEpdEiReMS+TM1s/0YeN3Q9TsqI/dWY+nCN383cIKnSe4agjw9ZCODS70AN2asoTOfKEDvyT1t4suLocmpNsx0HTzLJsyEGcduYinxSpzm2+2mBzHxzrW+ETjoYVR/jh+Qsqy4xupFPXqnE6qpUm61NWTSVkct0GEvAFpRcZy23r6mKIv56KnmHOln3Fz6t2T0m+24XCfR39X1O7VCfZ/wdTFI2fNzhK5W0No2IYy9hWhpvdT+dxoiDvhcFBW/uYUVpP0JeTddLhdSqRkXnlp5BUUBfJbGI=
+  - secure: DRZdIT+hQtCOgIfB/UmD0qsNXAHtuw4nLM/3ANyapmw0Dos+o4/C2uGuqarBmAXoz3yz0ggtHabHbgdEoS3tXNMoR9eyBuear6wfOWaGyTIPPphVyF9Ep3s5DMXTFHg3utVXMqxzonAkfzqpdC/FbkvuCReYF1pR2MEDsVcGUdpHGSnTyspnNF8rhYf8DMWMHaahc0jlkxaX8JxrRNELOwvTRTbR7S18MqQkKiLdwSc5llxSN73c1GPNhc5WqwcPAXuQxfyyJZ7nv07oT/UHDsqt5Cymz0Uh5QzsdyUBQLsp+B9cxVJQSVAqwSam3jeoRME1p5HZQQMm0QK8cibTuE3Wpoa9cdWCCeSeZ0N8e53uqxRcWtpnkBhZdopb2a5Nj1kJil3aDdVAX2tAK5GLS03d1y1O1QcK7iXk/0Tp2tjPDi2L+gqf3D7oEB1obnd/00i5p11VLUjna5F1GdljW/RLblHUazTlE3+xbjma2gnFoP1pxJ0/Y+wmp3PlPS9S3tffkSHbqDMngeVbpQTEuog/uW3GEMuDg83inRiz7lVy+rcviwt2Xhd5Qj1WjYuvQv1k/rI0gRZ5ifnTizvGfjR1bXQ6vlsRKBKDK5W8lBCYx/kVewgJaD5SfeS1IN0merJbedL3FNTSmmv5NGgnGOnSaWVmOFooJ7AKn+QrlFA=
+  - secure: GTfK1ulWEy/U2Li+p5I+voYD3lTjUtxyW5CSjNvAK2QxYRj4kWt6TXvcsLjBYARcEaqJn5D8NQUqrRPZQ42trxOppe/TpoKMMtnAVknoo4NfKRuclJb/YMkK3kSNma888nLGhuQFlo8WThNlJCd69HnHgv7Fi4cdSPOcTDoVwyMl4Iw86s6K0PO5yKs+MImozvvTvFxsORPUEZxrvjlEMIn+C7V+v8SCV9GiwP1A9WI0v0RI9edSFzUFiSaJlXwopn0+AQWWM6q46p2wxaCh6hnwQoRp+/D/1XK4hY2bNrLjnQsdC7NXNJB7TEsm2Nkr2ukKhfYLQL6G0dgAXJEOUPBpIbURWgHQ8iD3aKu4VLk2VAjGkGuRGvjVHQ8XwPatSTf0+DZ9pweRd+4ezeGMEs+kQPjLLzGAs6wVnssQcBKj+l7AaJhwzogCWxmnNn+uAua+u3cSam943vYe+QXherOz1V/TXyQNZCZMW3gVV6+9A4qgUx2djZExLGWYjfliyuuCdD+Gvioz4HH8R3eh6+vudmiMog0InuDM3+cPGck3xEjNvllgOTORwsnT+L3ZkdV2msHRZ4BXkxghbXFOwXwhDjf6ctuJQywCdPPpKklPBudNR6jjt9VwDcDah1gj+1JxyKWIKkbXFjiG7KGWbBE1vlHkY2NUtwrQJyCt/I8=
 addons:
   sonarcloud:
     organization: mr-cell-github
     token:
-      secure: $SONAR_TOKEN
+      secure: "$SONAR_TOKEN"
+
+
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
+  - export IMAGE_NAME=mrcell/spring-demo
+  - docker build -t $IMAGE_NAME:$COMMIT .
+  - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
+  - docker push $IMAGE_NAME
